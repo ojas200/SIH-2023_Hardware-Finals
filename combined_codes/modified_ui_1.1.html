@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @keyframes gradient {
+        form {
+          background-position: left;
+        }
+        to {
+          background-position: right;
+        }
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        /* background-color: #f4f4f4;
+      color: #333; */
+        background: linear-gradient(125deg, #c5eff7 0%, #afecf7 40%, #B2FCFF calc(40% + 1px), #B2FCFF 60%, #5EDFFF calc(60% + 1px), #5EDFFF 72%, #3E64FF calc(72% + 1px), #3E64FF 100%);
+        background-size: 250%;
+        background-position: left;
+        animation: gradient 10s infinite alternate;
+      }
+
+      
+      h4 {
+        font-size: 1.5rem;
+      }
+      #container {
+        /* width: 100%; */
+        /* max-width: 1024px; */
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 0 40px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .location-sections {
+        /* width: 100%; */
+        display: flex;
+        align-items: stretch;
+        justify-content: space-evenly;
+        margin: 20px 0;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      
+      .location-section {
+        padding: 40px 60px 60px;
+        border: 2px solid #fff;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.45);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(15px);
+        flex: 1;
+      }
+
+      .location-section h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.6rem;
+        margin-top: 0;
+      }
+
+      .location-section .sub-section h3 {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.5rem;
+      }
+
+      #third-section {
+        /* width: 100%; */
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-around;
+      }
+
+      #third-section .sub-section {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.45);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(15px);
+        margin: 20px 0;
+        /* width: 75%; */
+        padding: 0 20px;
+      }
+
+      #third-section .sub-section h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.7rem;
+      }
+
+      #third-section .sub-section h2 span {
+        font-family: "Roboto", sans-serif;
+        margin: 0 0 0 10px;
+      }
+
+      /* #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .location-sections {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .location-section {
+      flex: 1;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 10px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      max-width: 400px;
+    }
+
+    .sub-section {
+      flex: 1;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 10px 0;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h2, h3 {
+      color: #333;
+    }
+
+    #Temp {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #007BFF;
+    }
+
+    #third-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    #third-section .sub-section {
+      flex: 1;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 10px 0;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      width: 100%;
+    } */
+
+      /* Add more styles as needed */
+    </style>
+    <title>User Interface</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="location-sections">
+        <div class="location-section" id="current-location">
+          <h2>Current Location</h2>
+          <div class="sub-section" id="latitude">
+            <h4>Latitude: <span id="latitude-value">{{ latitude }}</span></h4>
+          </div>
+          <div class="sub-section" id="longitude">
+            <h4>
+              Longitude: <span id="longitude-value">{{ longitude }}</span>
+            </h4>
+          </div>
+          <div class="sub-section" id="elevation">
+            <h4>
+              Elevation: <span id="elevation-value">{{ elevation }}</span>
+            </h4>
+          </div>
+        </div>
+        <div class="location-section" id="calculated-location">
+            <h2>Optimal Location</h2>
+            <div class="sub-section" id="latitude-calculated">
+              <h4>Latitude: </h4>
+              <!-- Display calculated latitude information here -->
+            </div>
+            <div class="sub-section" id="longitude-calculated">
+              <h4>Longitude: </h4>
+              <!-- Display calculated longitude information here -->
+            </div>
+            <div class="sub-section" id="elevation-calculated">
+              <h4>Elevation: </h4>
+              <!-- Display calculated elevation information here -->
+            </div>
+            <div class="sub-section" id="elevation-calculated">
+              <h4>Depth: </h4>
+              <!-- Display calculated elevation information here -->
+            </div>
+          </div>
+      </div>
+      <div id="third-section">
+        <div class="sub-section" id="displacement">
+          <h2>Displacement Left:</h2>
+          <!-- Display displacement information here -->
+        </div>
+        <div class="sub-section" id="temperature">
+          <h2>Current Temperature: <span id="Temp">Loading...</span></h2>
+        </div>
+      </div>
+    </div>
+    <script>
+      function updateTemperature() {
+        // Replace the following URL with the actual endpoint to fetch the temperature from your Raspberry Pi
+        const temperatureEndpoint = "/get_temperature";
+
+        // Fetch the temperature from the endpoint
+        fetch(temperatureEndpoint)
+          .then((response) => response.json())
+          .then((data) => {
+            // Assuming the temperature value is available in the 'temperature' field of the response
+            const temperature = data.temperature;
+
+            // Update the content of the #Temp element with the fetched temperature
+            document.querySelector("#Temp").textContent = temperature;
+          })
+          .catch((error) => {
+            console.error("Error fetching temperature:", error.message);
+          });
+      }
+
+      // Call the updateTemperature function initially
+      updateTemperature();
+
+      // Call the updateTemperature function every 10 seconds
+      setInterval(updateTemperature, 10000);
+    </script>
+  </body>
+</html>
